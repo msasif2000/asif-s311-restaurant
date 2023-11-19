@@ -7,7 +7,7 @@ const Navbar = () => {
         <>
             <li className=""><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/menu'>Our Menu</NavLink></li>
-            <li><NavLink to='/order'>Order Item</NavLink></li>
+            <li><NavLink to='/order/salad'>Order Item</NavLink></li>
         </>
     return (
         <div className="fixed z-10 bg-opacity-30 bg-black w-full max-w-7xl mx-auto">
