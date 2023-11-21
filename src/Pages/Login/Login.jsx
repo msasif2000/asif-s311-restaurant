@@ -36,18 +36,20 @@ const Login = () => {
         const password = e.target.password.value;
         userLogin(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
-                Swal.fire({
-                    title: 'User Login Successful.',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-                navigate(from, { replace: true });
+                // const user = result.user;
+                //console.log(user);
+                if (result) {
+                    Swal.fire({
+                        title: 'User Login Successful.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    });
+                    navigate(from, { replace: true });
+                }
             })
     }
 
@@ -115,8 +117,8 @@ const Login = () => {
 
                                 </div>
                                 <div disabled={false} className="form-control mt-6">
-                                    <input className={`btn btn-sm text-white py-2 rounded-xl font-bold bg-orange-600 `} type="submit" value="Sign in" disabled={captchaDisabled} />                             
-                                       </div>
+                                    <input className={`btn btn-sm text-white py-2 rounded-xl font-bold bg-orange-600 `} type="submit" value="Sign in" disabled={captchaDisabled} />
+                                </div>
 
                             </form>
                             <div className="flex justify-center">
